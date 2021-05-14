@@ -1,0 +1,37 @@
+1.Week
+Temp user class store name, password, etc.
+Create login activity
+After 3 time wrong disable login button
+Create toss messages
+Check succesfull login or not
+
+2.week
+Design Signup activity(Surname, E-mail, PhoneNUmber, Birthdate, Password, Re-enter Password, Signup Button, Profile Photo(additional))
+    Re-enter(is the same with password)
+    is user exist ?
+    required areas for minimum registery
+    password will hash and store throught hash function
+
+Write file(Serilizable, or database )
+After sign in new activity will occur and there will be menu such as add question, etc.
+Ading question with answers and also an attachment button which the user can add pdf or jpeg
+Question activiy. There will be a question and we will pick the right answer, when click save it will save right and wrong answer into a file.
+    Also there will be a feature can add a pdf or image in same activity.
+Feature: There will be question poll and another app can be able to access that question poll.
+Bonus: There can be different type of questions.
+
+
+3.Week
+Menu Activity
+    Add a recyclerView for list of questions.(All questions will be shown: question pic, question, options,update(update the question info-from different activity) and delete the question buttons)
+    Add a recyclerView for adding a question.(Also, there will be adding image of question button)
+    Future: Add exam creation module. The exam questions will be picked from question poll.
+
+4.Week
+Exam Arrangement Activity
+    Exam time, Question point, Difficulty level(2: only 2 option ... to ...  5: only 5 options). (SharedPreference)
+    Pick questions
+    Save the exam
+    It must be send via Messaging Application as text format.
+Every user will create own exam with own questions.
+Logical questions
