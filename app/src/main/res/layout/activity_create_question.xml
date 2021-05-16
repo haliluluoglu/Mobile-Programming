@@ -1,0 +1,280 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/create_question_bg"
+
+    tools:context=".CreateQuestionActivity">
+
+    <TextView
+        android:id="@+id/question_sentence_text_view"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="@string/enter_question_sentence"
+        android:textAlignment="center"
+        android:textColor="@color/ghost_white"
+        android:textSize="30sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.48"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.046"
+        app:layout_constraintWidth_percent="0.8" />
+
+    <EditText
+        android:id="@+id/question_sentence_edit_text"
+        android:layout_width="0sp"
+        android:layout_height="0sp"
+        android:background="@drawable/edit_text_bg"
+        android:hint="@string/hint_question_area"
+        android:paddingLeft="25sp"
+        android:textColor="@color/black"
+        android:textColorHint="@color/gray"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHeight_percent="0.15"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.131"
+        app:layout_constraintWidth_percent="0.6" />
+
+    <ImageView
+        android:id="@+id/imageView"
+        android:layout_width="0sp"
+        android:layout_height="0sp"
+        android:src="@drawable/finger"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHeight_percent="0.05"
+        app:layout_constraintHorizontal_bias="0.056"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.326"
+        app:layout_constraintWidth_percent="0.05" />
+
+    <TextView
+        android:id="@+id/check_text_view"
+        android:layout_width="0sp"
+        android:layout_height="0sp"
+        android:text="@string/check_the_correct_answers_from_here"
+        android:textAlignment="center"
+        android:textColor="@color/ghost_white"
+        android:textSize="20sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHeight_percent="0.05"
+        app:layout_constraintHorizontal_bias="0.4"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.326"
+        app:layout_constraintWidth_percent="0.8" />
+
+    <CheckBox
+        android:id="@+id/option_a_cb"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Option A"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.039"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.4" />
+
+
+    <EditText
+        android:id="@+id/option_a_et"
+        android:layout_width="0sp"
+        android:layout_height="0sp"
+        android:background="@drawable/edit_text_bg"
+        android:paddingLeft="15sp"
+        android:textColor="@color/black"
+        android:textColorHint="@color/gray"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHeight_percent="0.05"
+        app:layout_constraintHorizontal_bias="0.199"
+        app:layout_constraintStart_toEndOf="@+id/option_a_cb"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.4"
+        app:layout_constraintWidth_percent="0.6" />
+
+
+    <CheckBox
+        android:id="@+id/option_b_cb"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Option B"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHeight_percent="0.05"
+        app:layout_constraintHorizontal_bias="0.04"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/option_a_cb"
+        app:layout_constraintVertical_bias="0.083"
+        app:layout_constraintWidth_percent="0.6" />
+
+    <EditText
+        android:id="@+id/option_d_et"
+        android:layout_width="0sp"
+        android:layout_height="0sp"
+        android:layout_marginTop="37dp"
+        android:background="@drawable/edit_text_bg"
+        android:paddingLeft="15sp"
+        android:textColor="@color/black"
+        android:textColorHint="@color/gray"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHeight_percent="0.05"
+        app:layout_constraintHorizontal_bias="0.193"
+        app:layout_constraintStart_toEndOf="@+id/option_d_cb"
+        app:layout_constraintTop_toBottomOf="@+id/option_c_et"
+        app:layout_constraintVertical_bias="0.0"
+        app:layout_constraintWidth_percent="0.6" />
+
+    <EditText
+        android:id="@+id/opiton_e_et"
+        android:layout_width="0sp"
+        android:layout_height="0sp"
+        android:background="@drawable/edit_text_bg"
+        android:paddingLeft="15sp"
+        android:textColor="@color/black"
+        android:textColorHint="@color/gray"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHeight_percent="0.05"
+        app:layout_constraintHorizontal_bias="0.184"
+        app:layout_constraintStart_toEndOf="@+id/option_e_cb"
+        app:layout_constraintTop_toBottomOf="@+id/option_d_et"
+        app:layout_constraintVertical_bias="0.08"
+        app:layout_constraintWidth_percent="0.6" />
+
+    <CheckBox
+        android:id="@+id/option_d_cb"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Option D"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.037"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/option_c_cb"
+        app:layout_constraintVertical_bias="0.139" />
+
+    <CheckBox
+        android:id="@+id/option_c_cb"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Option C"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.039"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/option_b_cb"
+        app:layout_constraintVertical_bias="0.1" />
+
+    <EditText
+        android:id="@+id/option_c_et"
+        android:layout_width="0sp"
+        android:layout_height="0sp"
+        android:layout_marginTop="32dp"
+        android:background="@drawable/edit_text_bg"
+        android:paddingLeft="15sp"
+        android:textColor="@color/black"
+        android:textColorHint="@color/gray"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHeight_percent="0.05"
+        app:layout_constraintHorizontal_bias="0.199"
+        app:layout_constraintStart_toEndOf="@+id/option_c_cb"
+        app:layout_constraintTop_toBottomOf="@+id/option_b_et"
+        app:layout_constraintVertical_bias="0.0"
+        app:layout_constraintWidth_percent="0.6" />
+
+    <EditText
+        android:id="@+id/option_b_et"
+        android:layout_width="0sp"
+        android:layout_height="0sp"
+        android:background="@drawable/edit_text_bg"
+        android:paddingLeft="15sp"
+        android:textColor="@color/black"
+        android:textColorHint="@color/gray"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHeight_percent="0.05"
+        app:layout_constraintHorizontal_bias="0.202"
+        app:layout_constraintStart_toEndOf="@+id/option_b_cb"
+        app:layout_constraintTop_toBottomOf="@+id/option_a_et"
+        app:layout_constraintVertical_bias="0.046"
+        app:layout_constraintWidth_percent="0.6" />
+
+    <CheckBox
+        android:id="@+id/option_e_cb"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Option E"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.04"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/option_d_cb"
+        app:layout_constraintVertical_bias="0.157" />
+
+    <Button
+        android:id="@+id/save_button"
+        android:layout_width="0sp"
+        android:layout_height="0sp"
+        android:background="@drawable/button_bg"
+        android:text="@string/save"
+        android:textColor="@color/white"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHeight_percent="0.05"
+        app:layout_constraintHorizontal_bias="0.175"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.918"
+        app:layout_constraintWidth_percent=".3" />
+
+    <TextView
+        android:id="@+id/file_text_view"
+        android:layout_width="0sp"
+        android:layout_height="0sp"
+        android:textAlignment="center"
+        android:textColor="@color/ghost_white"
+        android:textSize="20sp"
+        android:visibility="invisible"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHeight_percent="0.1"
+        app:layout_constraintHorizontal_bias="0.4"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/opiton_e_et"
+        app:layout_constraintVertical_bias="0.121"
+        app:layout_constraintWidth_percent="1" />
+
+    <Button
+        android:id="@+id/image_attachment_button"
+        android:layout_width="0sp"
+        android:layout_height="0sp"
+        android:background="@drawable/button_bg"
+        android:text="@string/image_attachment"
+        android:textColor="@color/white"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHeight_percent="0.05"
+        app:layout_constraintHorizontal_bias="0.567"
+        app:layout_constraintStart_toEndOf="@+id/save_button"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.918"
+        app:layout_constraintWidth_percent=".3" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

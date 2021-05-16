@@ -6,78 +6,86 @@
     android:layout_height="match_parent"
     tools:context=".MainActivity">
 
-    <EditText
-        android:id="@+id/emailTextArea"
-        android:layout_width="wrap_content"
-        android:layout_height="45dp"
-        android:layout_marginStart="4dp"
-        android:layout_marginTop="248dp"
-        android:ems="10"
-        android:hint="mail@example.com"
-        android:inputType="textEmailAddress"
-        app:layout_constraintStart_toStartOf="@+id/passwordTextArea"
-        app:layout_constraintTop_toTopOf="parent" />
-
-    <TextView
-        android:id="@+id/emailTexView"
-        android:layout_width="0dp"
-        android:layout_height="27dp"
-        android:layout_marginStart="22dp"
-        android:layout_marginTop="27dp"
-        android:layout_marginEnd="9dp"
-        android:layout_marginBottom="23dp"
-        android:text="Your Email"
-        android:textSize="18sp"
-        android:textStyle="bold"
-        app:layout_constraintBottom_toTopOf="@+id/passwordTextView"
-        app:layout_constraintEnd_toStartOf="@+id/emailTextArea"
-        app:layout_constraintHorizontal_bias="1.0"
-        app:layout_constraintStart_toStartOf="@+id/passwordTextView"
-        app:layout_constraintTop_toTopOf="@+id/emailTextArea"
-        app:layout_constraintVertical_bias="1.0" />
-
-    <EditText
-        android:id="@+id/passwordTextArea"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="4dp"
-        android:layout_marginTop="24dp"
-        android:ems="10"
-        android:hint="Your Password"
-        android:inputType="textPassword"
-        app:layout_constraintStart_toEndOf="@+id/passwordTextView"
-        app:layout_constraintTop_toBottomOf="@+id/emailTextArea" />
-
-    <TextView
-        android:id="@+id/passwordTextView"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="36dp"
-        android:text="Your Password"
-        android:textSize="18sp"
-        android:textStyle="bold"
-        app:layout_constraintBaseline_toBaselineOf="@+id/passwordTextArea"
-        app:layout_constraintStart_toStartOf="parent" />
-
-    <Button
-        android:id="@+id/signupButton"
-        android:layout_width="96dp"
-        android:layout_height="58dp"
-        android:layout_marginEnd="48dp"
-        android:text="SignUp"
-        app:layout_constraintBaseline_toBaselineOf="@+id/loginButton"
-        app:layout_constraintEnd_toEndOf="parent" />
-
-    <Button
-        android:id="@+id/loginButton"
-        android:layout_width="96dp"
-        android:layout_height="55dp"
-        android:layout_marginStart="123dp"
-        android:layout_marginTop="36dp"
-        android:layout_marginEnd="124dp"
-        android:text="Login"
-        app:layout_constraintEnd_toEndOf="@+id/signupButton"
-        app:layout_constraintHorizontal_bias="0.9"
+    <ImageView
+        android:id="@+id/imageView2"
+        android:layout_width="414sp"
+        android:layout_height="273sp"
+        android:contentDescription="@string/description_main_bg_image"
+        android:scaleType="centerCrop"
+        android:src="@drawable/main_activity_bg"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHeight_percent=".27"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/passwordTextArea" />
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0" />
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/constraintLayout2"
+        android:layout_width="wrap_content"
+        android:layout_height="0sp"
+        android:background="@drawable/constraint_round"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHeight_percent=".7"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="1">
+
+        <androidx.viewpager.widget.ViewPager
+            android:id="@+id/main_view_pager"
+            android:layout_width="match_parent"
+            android:layout_height="0sp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHeight_percent="0.79"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/main_tablayout"
+            app:layout_constraintVertical_bias="0" />
+
+        <com.google.android.material.tabs.TabLayout
+            android:id="@+id/main_tablayout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:maxWidth="15sp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0"
+            app:tabGravity="fill"
+            android:padding="5sp"
+            app:tabMode="fixed"
+            app:tabTextColor="@color/black" />
+
+
+        <com.google.android.material.floatingactionbutton.FloatingActionButton
+            android:id="@+id/main_info_icon"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:backgroundTint="@color/white"
+            android:contentDescription="@string/info_icon_image"
+            android:elevation="35sp"
+            android:src="@drawable/info_icon"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/main_view_pager" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/welcome"
+        android:textColor="#FF6600"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toTopOf="@+id/constraintLayout2"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.526"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.453" />
+
+
 </androidx.constraintlayout.widget.ConstraintLayout>

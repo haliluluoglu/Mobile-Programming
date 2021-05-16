@@ -1,5 +1,36 @@
 <resources>
     <string name="app_name">Halil İbrahim Uluoğlu</string>
-    <string name="temp">Halil İbrahim Uluoğlu</string>
     <string name="welcome">WELCOME</string>
+    <string name="hello_world">Hello Square World!</string>
+    <string name="hint_email">mail@example.com</string>
+    <string name="hint_password">Your Password</string>
+    <string name="hint_reEnterPasswordTextArea">Re-Enter Your Password</string>
+    <string name="sign_in">Sign In</string>
+    <string name="description_main_bg_image">Main Background Image</string>
+    <string name="info_icon_image">Info Icon Image</string>
+    <string name="hint_first_name">Your First Name</string>
+    <string name="hint_last_name">Your Last Name</string>
+    <string name="hint_phone_number">Phone Number</string>
+    <string name="hint_birtday">01/01/1999</string>
+    <string name="sign_up">Sign Up</string>
+    <string name="on_boarding_image">on_boarding_image</string>
+    <string name="navigation_drawer_open">Open Navigation Drawer</string>
+    <string name="navigation_drawer_close">Close Navigation Drawer</string>
+    <string name="hint_question_area">Write your question in here.</string>
+    <string name="enter_question_sentence">Enter question sentence</string>
+    <string name="check_the_correct_answers_from_here">Check the correct answers from here.</string>
+    <string name="save">Save</string>
+    <string name="image_attachment">Add Image</string>
+    <string name="create_exam">
+        List questions<br />
+        Create Exams
+    </string>
+    <string name="question">Question:</string>
+    <string name="option_a">Option A:</string>
+    <string name="option_b">Option B:</string>
+    <string name="option_c">Option C:</string>
+    <string name="option_d">Option D:</string>
+    <string name="option_e">Option E:</string>
+    <string name="hint_test_name">Test Name</string>
+    <string name="hint_test_time">Test Time</string>
 </resources>

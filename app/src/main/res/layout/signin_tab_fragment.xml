@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <EditText
+        android:id="@+id/emailTextArea"
+        android:layout_width="0sp"
+        android:layout_height="wrap_content"
+        android:background="@drawable/edit_text_bg"
+        android:hint="@string/hint_email"
+        android:inputType="textEmailAddress"
+        android:paddingLeft="20sp"
+        android:paddingTop="10sp"
+        android:paddingBottom="10sp"
+        android:textColor="@color/black"
+        android:textColorHint="#808080"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias=".5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias=".3"
+        app:layout_constraintWidth_percent=".8" />
+
+    <EditText
+        android:id="@+id/passwordTextArea"
+        android:layout_width="0sp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20sp"
+        android:background="@drawable/edit_text_bg"
+        android:hint="@string/hint_password"
+        android:inputType="textPassword"
+        android:paddingLeft="20sp"
+        android:paddingTop="10sp"
+        android:paddingBottom="10sp"
+        android:textColor="@color/black"
+        android:textColorHint="#808080"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias=".5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/emailTextArea"
+        app:layout_constraintVertical_bias="0"
+        app:layout_constraintWidth_percent=".8" />
+
+    <Button
+        android:id="@+id/signinButton"
+        android:layout_width="0sp"
+        android:layout_height="wrap_content"
+        android:background="@drawable/button_bg"
+        android:text="@string/sign_in"
+        android:textColor="@color/white"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/passwordTextArea"
+        app:layout_constraintVertical_bias="0.216"
+        app:layout_constraintWidth_percent=".6" />
+</androidx.constraintlayout.widget.ConstraintLayout>

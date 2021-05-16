@@ -1,121 +1,105 @@
 package uluoglu.ibrahim.halil;
 
+import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.viewpager.widget.ViewPager;
 
-import android.content.Intent;
+import android.database.Cursor;
+import android.database.sqlite.SQLiteDatabase;
 import android.os.Bundle;
-import android.view.View;
-import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
-import android.widget.Toast;
+
+import com.google.android.material.floatingactionbutton.FloatingActionButton;
+import com.google.android.material.tabs.TabLayout;
+
+import java.nio.charset.StandardCharsets;
+import java.security.MessageDigest;
+import java.security.NoSuchAlgorithmException;
 import java.util.ArrayList;
 
 public class MainActivity extends AppCompatActivity {
-    EditText emailTextArea,passwordTextArea;
-    TextView emailTextView,passwordTextView;
-    Button loginButton,signupButton;
-    String emailControl,passwordControl,errorMessage;
-    ArrayList<User> usersList = new ArrayList<User>();
-    int loginErrorCounter=3;
+    private static UserDatabaseHelper userDatabaseHelper;
+    TabLayout mainTablayout;
+    ViewPager mainViewPager;
+    FloatingActionButton mainInfoIcon;
+    EditText emailTextArea, passwordTextArea;
+    TextView emailTextView;
+    final String PASSWORD="12";
+    final String SALT="halil";
+    float k = 0;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        userDatabaseHelper = new UserDatabaseHelper(this);
 
+        mainTablayout = findViewById(R.id.main_tablayout);
+        mainViewPager = findViewById(R.id.main_view_pager);
+        mainInfoIcon = findViewById(R.id.main_info_icon);
         emailTextArea = findViewById(R.id.emailTextArea);
         passwordTextArea = findViewById(R.id.passwordTextArea);
         emailTextView = findViewById(R.id.emailTexView);
-        loginButton = findViewById(R.id.loginButton);
-        signupButton = findViewById(R.id.signupButton);
-        createUsers();
 
-        loginButton.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                emailControl=emailTextArea.getText().toString();
-                passwordControl= String.valueOf(passwordTextArea.getText());
+        mainTablayout.addTab(mainTablayout.newTab().setText("Sign In"));
+        mainTablayout.addTab(mainTablayout.newTab().setText("Sign Up"));
+        final MainAdapter mainAdapter = new MainAdapter(getSupportFragmentManager(), this, mainTablayout.getTabCount());
+        mainViewPager.setAdapter(mainAdapter);
+        mainViewPager.addOnPageChangeListener(new TabLayout.TabLayoutOnPageChangeListener(mainTablayout));
+        mainInfoIcon.setTranslationY(300);
+        mainTablayout.setTranslationY(300);
+        mainInfoIcon.setAlpha(k);
+        mainTablayout.setAlpha(k);
+        mainInfoIcon.animate().translationY(0).alpha(1).setDuration(1000).setStartDelay(400).start();
+        mainTablayout.animate().translationY(0).alpha(1).setDuration(1000).setStartDelay(100).start();
 
-                if(emailControl.isEmpty() || passwordControl.isEmpty())
-                {
-                    loginErrorCounter--;
-                    errorMessage = "Email or Password can not be empty! Last "+loginErrorCounter+" attempt!";
-                    Toast.makeText(MainActivity.this,errorMessage,Toast.LENGTH_SHORT).show();
-                    if(loginErrorCounter==0)
-                    {
-                        makeButtonsInvisible();
-                    }
-                }
-
-                //atemmpt 0 ise yapma ekle
-                User findedUser=null;
-                for(User aUser : usersList)
-                {
-                    if((aUser.getEmail().equals(emailControl)) && (aUser.getPassword().equals(passwordControl)))
-                    {
-                        findedUser=aUser;
-                    }
-                }
-                if(findedUser!=null)
-                {
-                    loginErrorCounter=3;
-                    errorMessage = "Successful login, loading...";
-                    Toast.makeText(MainActivity.this,errorMessage,Toast.LENGTH_SHORT).show();
-                    Intent intent = new Intent(MainActivity.this, LoginActivity.class);
-                    System.out.println("id gönderdim: "+findedUser.getPhotoID());
-                    intent.putExtra("photo_id_of_user",String.valueOf(findedUser.getPhotoID()));
-                    intent.putExtra("user_first_name",findedUser.getFirstName());
-                    intent.putExtra("user_last_name",findedUser.getLastName());
-                    startActivity(intent);
-                }
-                else if(findedUser==null)
-                {
-                    errorMessage = "Your Email or Password is wrong! Try again! Last " + loginErrorCounter +" attempt!";
-                    Toast.makeText(MainActivity.this,errorMessage,Toast.LENGTH_SHORT).show();
-                    loginErrorCounter--;
-                    if(loginErrorCounter==0)
-                    {
-                        makeButtonsInvisible();
-                    }
-                }
-
-
-
-            }
-        });
+        try {
+            createUsers();
+        } catch (NoSuchAlgorithmException e) {
+            e.printStackTrace();
+        }
     }
 
-    public void makeButtonsInvisible()
-    {
-        errorMessage = "It was your last attempt. Please contact us!";
-        Toast.makeText(MainActivity.this,errorMessage,Toast.LENGTH_LONG).show();
-        loginButton.setVisibility(View.INVISIBLE);
-        signupButton.setVisibility(View.INVISIBLE);
+    public void createUsers() throws NoSuchAlgorithmException {
+        Security security = new Security();
+        String hashedPassword = security.get_SHA_512_SecurePassword(PASSWORD, SALT);
+        userDatabaseHelper.insertUserData("Albert", "Einstein", "albert_einstein@gmail.com", hashedPassword, 11);
+        userDatabaseHelper.insertUserData("Alan", "Turing", "alan_turing@gmail.com", hashedPassword, 12);
+        userDatabaseHelper.insertUserData("Wilhelm", "Wilhelm", "wilhelm_leibniz@gmail.com", hashedPassword, 13);
+        userDatabaseHelper.insertUserData("Joseph", "Fourier", "joseph_fourier@gmail.com", hashedPassword, 14);
+        userDatabaseHelper.insertUserData("Marie", "Curie", "marie_curie@gmail.com", hashedPassword, 15);
+        userDatabaseHelper.insertUserData("Mileva", "Maric", "mileva_maric@gmail.com", hashedPassword, 16);
+        userDatabaseHelper.insertUserData("Ada", "Lovelace", "ada_lovelace@gmail.com", hashedPassword, 17);
+        userDatabaseHelper.insertUserData("Canan", "Dağdeviren", "canan_dagdeviren@gmail.com", hashedPassword, 18);
+        userDatabaseHelper.insertUserData("Oktay", "Sinanoğlu", "oktay_sinanoglu@gmail.com", hashedPassword, 19);
+        userDatabaseHelper.insertUserData("Cahit", "Arf", "cahit_arf@gmail.com", hashedPassword, 20);
+//        Cursor cursor = userDatabaseHelper.getData();
+//        StringBuffer buffer = new StringBuffer();
+//        while(cursor.moveToNext())
+//        {
+//            buffer.append("\n"+"First Name: " + cursor.getString(0)+"\n");
+//            buffer.append("Last Name: " + cursor.getString(1)+"\n");
+//            buffer.append("Email: " + cursor.getString(2)+"\n");
+//            buffer.append("Password: " + cursor.getString(3)+"\n");
+//            buffer.append("Photo ID: " + cursor.getString(4)+"\n");
+//        }
+//        AlertDialog.Builder builder = new AlertDialog.Builder(MainActivity.this);
+//        builder.setCancelable(true);
+//        builder.setTitle("Users");
+//        builder.setMessage(buffer.toString());
+//        builder.show();
     }
 
-    public void createUsers()
-    {
-
-        User albertEinstein = new User("Albert","Einstein","albert_einstein@gmail.com","123456",11);
-        User alanTuring = new User("Alan","Turing","alan_turing@gmail.com","123456",12);
-        User wilhelmLeibniz = new User("Wilhelm","Leibniz","wilhelm_leibniz@gmail.com","123456",13);
-        User josephFourier = new User("Joseph","Fourier","joseph_fourier@gmail.com","123456",14);
-        User marieCurie = new User("Marie","Curie","marie_curie@gmail.com","123456",15);
-        User milevMaric = new User("Mileva","Maric","mileva_maric@gmail.com","123456",16);
-        User adaLovelace = new User("Ada","Lovelace","ada_lovelace@gmail.com","123456",17);
-        User cananDagdeviren = new User("Canan","Dağdeviren","canan_dagdeviren@gmail.com","123456",18);
-        User oktaySinanoglu = new User("Oktay","Sinanoğlu","oktay_sinanoglu@gmail.com","123456",19);
-        User cahitArf = new User("Cahit","Arf","cahit_arf@gmail.com","123456",20);
-        usersList.add(albertEinstein);
-        usersList.add(alanTuring);
-        usersList.add(wilhelmLeibniz);
-        usersList.add(josephFourier);
-        usersList.add(marieCurie);
-        usersList.add(milevMaric);
-        usersList.add(adaLovelace);
-        usersList.add(cananDagdeviren);
-        usersList.add(oktaySinanoglu);
-        usersList.add(cahitArf);
+    @Override
+    protected void onStop() {
+        super.onStop();
+        userDatabaseHelper.deleteDatabase();
     }
+
+    public static UserDatabaseHelper getUserDatabaseHelper() {
+        return userDatabaseHelper;
+    }
+
+
 }

@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".CreateExamsActivity">
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/recyclerView"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginBottom="150sp"
+        android:background="@drawable/create_question_bg"
+        android:padding="4sp"
+        android:scrollbars="vertical" />
+
+
+    <Button
+        android:id="@+id/button_insert"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginStart="78dp"
+        android:layout_marginBottom="9dp"
+        android:background="@drawable/button_bg"
+        android:text="insert" />
+
+    <Button
+        android:id="@+id/button_remove"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginEnd="115dp"
+        android:layout_marginBottom="9dp"
+        android:background="@drawable/button_bg"
+        android:text="remove" />
+
+    <SeekBar
+        android:id="@+id/seek_bar"
+        android:layout_width="104dp"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginStart="302dp"
+        android:layout_marginEnd="5dp"
+        android:layout_marginBottom="89dp"
+        android:max="5"
+        android:min="2"
+        android:progress="3" />
+
+    <EditText
+        android:id="@+id/test_name_et"
+        android:layout_width="134dp"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/button_insert"
+        android:layout_alignParentStart="true"
+        android:layout_marginStart="18dp"
+        android:layout_marginBottom="35dp"
+        android:background="@drawable/edit_text_bg"
+        android:hint="@string/hint_test_name"
+        android:paddingLeft="10sp"
+        android:textColor="@color/black"
+        android:textColorHint="#808080" />
+
+    <EditText
+        android:id="@+id/test_time"
+        android:layout_width="125dp"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/button_insert"
+        android:layout_alignParentStart="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginStart="162dp"
+        android:layout_marginBottom="34dp"
+        android:background="@drawable/edit_text_bg"
+        android:hint="@string/hint_test_time"
+        android:inputType="number"
+        android:paddingLeft="10sp"
+        android:textColor="@color/black"
+        android:textColorHint="#808080" />
+
+    <TextView
+        android:id="@+id/seekbar_text_view"
+        android:layout_width="40dp"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginStart="324dp"
+        android:layout_marginBottom="110dp"
+        android:text="3"
+        android:textAlignment="center" />
+
+
+</RelativeLayout>

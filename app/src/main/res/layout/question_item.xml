@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/item_card_view"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginBottom="4sp"
+    app:cardCornerRadius="4sp">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_margin="4sp">
+
+        <ImageView
+            android:id="@+id/imageView"
+            android:layout_width="150sp"
+            android:layout_height="150sp"
+            android:padding="2sp" />
+
+        <TextView
+            android:id="@+id/sentence"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentTop="true"
+            android:layout_toEndOf="@+id/imageView"
+            android:text="@string/question"
+            android:textColor="@android:color/holo_orange_dark"
+            android:textSize="20sp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/optionA"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/sentence"
+            android:layout_marginStart="8sp"
+            android:layout_toEndOf="@+id/imageView"
+            android:text="@string/option_a"
+            android:textColor="@color/white"
+            android:textSize="15sp" />
+
+        <TextView
+            android:id="@+id/optionB"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/sentence"
+            android:layout_marginStart="8sp"
+            android:layout_marginTop="29dp"
+            android:layout_toEndOf="@+id/imageView"
+            android:text="@string/option_b"
+            android:textColor="@color/white"
+            android:textSize="15sp" />
+
+        <TextView
+            android:id="@+id/optionC"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/sentence"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="53dp"
+            android:layout_toEndOf="@+id/imageView"
+            android:text="@string/option_c"
+            android:textColor="@color/white"
+            android:textSize="15sp" />
+
+        <TextView
+            android:id="@+id/optionD"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/sentence"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="78dp"
+            android:layout_toEndOf="@+id/imageView"
+            android:text="@string/option_d"
+            android:textColor="@color/white"
+            android:textSize="15sp" />
+
+        <TextView
+            android:id="@+id/optionE"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/sentence"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="101dp"
+            android:layout_toEndOf="@+id/imageView"
+            android:text="@string/option_e"
+            android:textColor="@color/white"
+            android:textSize="15sp" />
+
+        <CheckBox
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentEnd="true"
+            android:layout_marginStart="350dp"
+            android:layout_marginTop="107dp"
+            android:layout_marginEnd="21dp" />
+    </RelativeLayout>
+</androidx.cardview.widget.CardView>

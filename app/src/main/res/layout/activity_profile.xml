@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<androidx.drawerlayout.widget.DrawerLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/drawer_layout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:clickable="true"
+    android:fitsSystemWindows="true"
+    tools:openDrawer="start">
+
+    <include
+        layout="@layout/app_bar_main"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" />
+
+    <com.google.android.material.navigation.NavigationView
+        android:id="@+id/nav_view"
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:layout_gravity="start"
+        android:background="@color/ghost_white"
+        android:theme="@style/toolbarDivider"
+        app:headerLayout="@layout/nav_header_main"
+        app:itemIconTint="@color/dimgray"
+        app:itemShapeFillColor="@color/dimgray"
+        app:itemTextColor="@color/dimgray"
+        app:menu="@menu/main_menu" />
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/ghost_white"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="?attr/actionBarSize">
+
+        <ImageButton
+            android:id="@+id/navigation_image_button"
+            android:layout_width="50sp"
+            android:layout_height="50sp"
+            android:scaleType="centerInside"
+            android:background="@color/white"
+            android:src="@drawable/navigation_button"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.03"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.023" />
+
+
+        <ImageButton
+            android:id="@+id/make_question_image_button"
+            android:layout_width="150sp"
+            android:layout_height="150sp"
+            android:background="@drawable/image_button_selector"
+            android:scaleType="centerInside"
+            android:src="@drawable/question_mark"
+            app:layout_constraintBottom_toTopOf="@+id/create_exam_image_button"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.455"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.71" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="sans-serif-condensed-medium"
+            android:text="Create Question"
+            android:textColor="@color/black"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.45"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.213" />
+
+        <ImageButton
+            android:id="@+id/create_exam_image_button"
+            android:layout_width="150sp"
+            android:layout_height="150sp"
+            android:layout_marginStart="128dp"
+            android:background="@drawable/image_button_selector"
+            android:scaleType="centerInside"
+            android:src="@drawable/create_exam"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.746" />
+
+        <TextView
+            android:layout_width="123dp"
+            android:layout_height="51dp"
+            android:fontFamily="sans-serif-condensed-medium"
+            android:text="@string/create_exam"
+            android:textColor="@color/black"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.563" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</androidx.drawerlayout.widget.DrawerLayout>

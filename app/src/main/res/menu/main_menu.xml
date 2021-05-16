@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <!--    Only one single item can clickable one time-->
+       <item
+           android:id="@+id/nav_home"
+           android:icon="@drawable/home_icon"
+           android:title="Home" />
+        <item
+            android:id="@+id/profile"
+            android:icon="@drawable/profile_icon"
+            android:title="Profile" />
+
+
+
+        <item
+            android:id="@+id/login"
+            android:icon="@drawable/login_icon"
+            android:title="Login" />
+
+        <item
+            android:id="@+id/information"
+            android:icon="@drawable/information_icon"
+            android:title="Information" />
+
+    <group>
+        <menu>
+            <item
+                android:id="@+id/settings"
+                android:icon="@drawable/settings_icon"
+                android:title="Settings" />
+            <item
+                android:id="@+id/share"
+                android:icon="@drawable/share_icon"
+                android:title="Share" />
+        </menu>
+    </group>
+
+</menu>
